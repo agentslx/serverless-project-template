@@ -1,0 +1,21 @@
+[package]
+name        = "handler_get_me"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "handler_get_me"
+path = "src/main.rs"
+
+[dependencies]
+tokio          = { workspace = true, features = ["macros", "rt"] }
+lambda_http    = { workspace = true }
+lambda_runtime = { workspace = true }
+serde_json     = { workspace = true }
+tracing        = { workspace = true }
+
+shared_entities_rs = { workspace = true }
+shared_database_rs = { workspace = true }
+shared_common_rs   = { workspace = true }
+feature_auth_rs    = { workspace = true }

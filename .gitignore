@@ -1,58 +1,100 @@
-# Python
+# Rust
+target/
+**/*.rs.bk
+backend/Cargo.lock
+
+# Node
+node_modules/
+.pnp
+.pnp.js
+yarn-error.log
+yarn-debug.log
+.npm
+build/
+.eslintcache
+
+# Python / Pulumi
 __pycache__/
 *.py[cod]
-*$py.class
-*.egg-info/
-*.egg
-dist/
-build/
-.eggs/
-
-# Virtual environments
 .venv/
 venv/
-ENV/
+.pulumi/
+Pulumi.*.yaml.bak
 
-# uv
-uv.lock
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-.hypothesis/
+# Env
+.env.local
+*.env.local
 
 # IDE
 .idea/
 .vscode/
 *.swp
-*.swo
-*~
-
-# OS
 .DS_Store
-Thumbs.db
 
-# Node.js
-node_modules/
-.next/
-out/
+# Coverage
+coverage/
+*.lcov
 
-# Build artifacts
-.build/
-.aws-sam/
-
-# Pulumi
-.pulumi/
-
-# SAM
-samconfig.toml
-
-# Environment
+# Lambda zips
+*.zip
+-e 
+# Environment and credential files
 .env
 .env.*
-!.env.example
-
-# Secrets
+*.env
+credentials.json
 *.pem
 *.key
+.credentials
+-e 
+# Environment and credential files
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
+backend/target/debug/deps/local_proxy-f02107efa140fd37
+backend/target/debug/deps/handler_get_profile-4a17bca170a9c72d
+backend/target/debug/deps/unit_test-f52418dfe0c4c654
+backend/target/debug/deps/handler_update_profile-593347e8bf50b35d
+backend/target/debug/deps/unit_test-13719de9ddc7ceab
+backend/target/debug/deps/handler_post_confirmation_trigger-40269857b24403d4
+backend/target/debug/deps/libaws_sdk_dynamodb-6f332682f72a6948.rlib
+backend/target/debug/deps/integration_test-17cfc86383c08571
+backend/target/debug/deps/local_proxy-7ee1af43728c7ae8
+backend/target/debug/deps/integration_test-353dc70cb7e2a5fb
+backend/target/debug/deps/handler_get_me-e078235c392a0e91
+backend/target/debug/deps/shared_database_rs-14ecf131eee81b80
+backend/target/debug/deps/feature_auth_rs-449912e66966f267
+backend/target/debug/handler_post_confirmation_trigger
+backend/target/debug/local_proxy
+backend/target/debug/handler_get_me
+backend/target/debug/handler_get_profile
+backend/target/debug/handler_update_profile
+-e 
+# Environment and credential files
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
+backend/target/debug/deps/unit_test-4c687b38a9320173
+backend/target/debug/deps/local_proxy-470bce69ad00e75b
+backend/target/debug/deps/handler_list_users-44493cf840450644
+backend/target/debug/deps/libaws_sdk_dynamodb-03763b9d7273b0a6.rlib
+backend/target/debug/deps/local_proxy-0660cad48abd0828
+backend/target/debug/deps/local_proxy-381d2383600eb8d3
+backend/target/debug/handler_list_users
+-e 
+# Environment and credential files
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials

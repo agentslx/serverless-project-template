@@ -1,0 +1,38 @@
+name: frontend-ci
+
+on:
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'admin-frontend/**'
+      - '.github/workflows/frontend-ci.yml'
+  push:
+    branches: [main, develop]
+    paths:
+      - 'frontend/**'
+      - 'admin-frontend/**'
+
+jobs:
+  build-user-app:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: frontend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'yarn', cache-dependency-path: frontend/yarn.lock }
+      - run: yarn install --frozen-lockfile
+      - name: Build (dev flavour)
+        env: { REACT_APP_FLAVOR: dev }
+        run: yarn build
+
+  build-admin-app:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: admin-frontend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'yarn', cache-dependency-path: admin-frontend/yarn.lock }
+      - run: yarn install --frozen-lockfile
+      - name: Build (dev flavour)
+        env: { REACT_APP_FLAVOR: dev }
+        run: yarn build

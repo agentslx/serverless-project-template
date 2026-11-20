@@ -1,0 +1,2 @@
+pub mod dynamo_user_profile_datasource;
+pub use dynamo_user_profile_datasource::DynamoUserProfileDataSource;

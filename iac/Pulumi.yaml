@@ -1,0 +1,6 @@
+name: emergent-serverless-template
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Serverless Rust + DynamoDB + Cognito + AppSync + S3/CDN

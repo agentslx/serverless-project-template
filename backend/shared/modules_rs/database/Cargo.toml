@@ -1,0 +1,12 @@
+[package]
+name        = "shared_database_rs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+aws-config       = { workspace = true }
+aws-sdk-dynamodb = { workspace = true }
+tokio            = { workspace = true }
+tracing          = { workspace = true }
+once_cell        = { workspace = true }

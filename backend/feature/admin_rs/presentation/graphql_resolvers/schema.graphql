@@ -1,0 +1,27 @@
+type AdminUserProfile @aws_cognito_user_pools(cognito_groups: ["admin"]) {
+  user_id: ID!
+  email: AWSEmail!
+  display_name: String!
+  avatar_url: String
+  created_at: AWSDateTime!
+  updated_at: AWSDateTime!
+}
+
+type ListUsersPage @aws_cognito_user_pools(cognito_groups: ["admin"]) {
+  users: [AdminUserProfile!]!
+  next_token: String
+}
+
+type Query {
+  """
+  List users. Admin-only. Paginated.
+  - `limit` clamps to 1..=100 (default 20).
+  - `next_token` is the opaque cursor returned from the previous page.
+  """
+  listUsers(limit: Int, next_token: String): ListUsersPage!
+    @aws_cognito_user_pools(cognito_groups: ["admin"])
+}
+
+schema {
+  query: Query
+}

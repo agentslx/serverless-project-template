@@ -1,0 +1,9 @@
+config:
+  aws:region: ap-southeast-2
+  emergent-serverless-template:projectPrefix: est
+  emergent-serverless-template:stackName: prod
+  emergent-serverless-template:logRetentionDays: "30"
+  emergent-serverless-template:lambdaArtifactsDir: ../backend/target/lambda
+  emergent-serverless-template:pythonLambdaArtifactsDir: ../backend/target/python_lambda
+  emergent-serverless-template:userFrontendBundleDir: ../frontend/build
+  emergent-serverless-template:adminFrontendBundleDir: ../admin-frontend/build

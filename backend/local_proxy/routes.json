@@ -1,0 +1,57 @@
+{
+  "$schema": "./routes.schema.json",
+  "comment": [
+    "Single source of truth for the local proxy.",
+    "To add a route:",
+    "  1. Implement the handler under `feature/<name>_rs/...` or `feature/<name>_py/...`.",
+    "  2. (Rust only) register it in `local_proxy/src/handlers.rs::dispatch_rust()`.",
+    "  3. (Python only) register it in `local_proxy_py/handlers.py::HANDLERS`.",
+    "  4. Add an entry below.",
+    "Path syntax follows `matchit` (axum's router): `:name` matches a single segment."
+  ],
+  "python_subserver_url": "http://localhost:9001",
+  "routes": [
+    {
+      "method": "GET",
+      "path":   "/api/me",
+      "handler": "get_me",
+      "language": "rust"
+    },
+    {
+      "method": "GET",
+      "path":   "/api/profile/:user_id",
+      "handler": "get_profile",
+      "language": "rust"
+    },
+    {
+      "method": "PATCH",
+      "path":   "/api/profile/:user_id",
+      "handler": "update_profile",
+      "language": "rust"
+    },
+    {
+      "method": "GET",
+      "path":   "/api/health",
+      "handler": "health",
+      "language": "python"
+    },
+    {
+      "method": "GET",
+      "path":   "/api/admin/users",
+      "handler": "list_users",
+      "language": "rust"
+    },
+    {
+      "method": "GET",
+      "path":   "/api/chat/conversations",
+      "handler": "list_conversations",
+      "language": "python"
+    },
+    {
+      "method": "GET",
+      "path":   "/api/chat/conversations/:conversation_id",
+      "handler": "get_conversation",
+      "language": "python"
+    }
+  ]
+}

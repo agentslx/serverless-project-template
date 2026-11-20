@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Roboto Flex (variable) — Material 3 reference type */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block");
+
+:root {
+    /* Material 3 light token set */
+    --md-primary: 256 60% 38%;            /* #4A36B7-ish indigo */
+    --md-on-primary: 0 0% 100%;
+    --md-primary-container: 256 100% 94%;
+    --md-on-primary-container: 256 60% 14%;
+
+    --md-secondary: 196 70% 35%;          /* teal-blue */
+    --md-on-secondary: 0 0% 100%;
+    --md-secondary-container: 196 95% 91%;
+    --md-on-secondary-container: 196 70% 12%;
+
+    --md-tertiary: 24 86% 45%;            /* warm amber */
+    --md-on-tertiary: 0 0% 100%;
+    --md-tertiary-container: 28 100% 92%;
+    --md-on-tertiary-container: 24 86% 18%;
+
+    --md-error: 0 78% 42%;
+    --md-on-error: 0 0% 100%;
+
+    --md-background: 240 14% 97%;
+    --md-on-background: 240 12% 13%;
+    --md-surface: 0 0% 100%;
+    --md-surface-variant: 240 16% 95%;
+    --md-on-surface: 240 12% 13%;
+    --md-on-surface-variant: 240 8% 36%;
+
+    --md-outline: 240 8% 70%;
+    --md-outline-variant: 240 14% 90%;
+
+    --radius: 0.5rem;
+
+    /* Shadcn token bridge — many vendor components in /components/ui still
+       reference --background / --foreground etc. We map them onto the M3 tokens. */
+    --background: var(--md-background);
+    --foreground: var(--md-on-background);
+    --card: var(--md-surface);
+    --card-foreground: var(--md-on-surface);
+    --popover: var(--md-surface);
+    --popover-foreground: var(--md-on-surface);
+    --primary: var(--md-primary);
+    --primary-foreground: var(--md-on-primary);
+    --secondary: var(--md-secondary-container);
+    --secondary-foreground: var(--md-on-secondary-container);
+    --muted: var(--md-surface-variant);
+    --muted-foreground: var(--md-on-surface-variant);
+    --accent: var(--md-tertiary-container);
+    --accent-foreground: var(--md-on-tertiary-container);
+    --destructive: var(--md-error);
+    --destructive-foreground: var(--md-on-error);
+    --border: var(--md-outline-variant);
+    --input: var(--md-outline-variant);
+    --ring: var(--md-primary);
+}
+
+html, body, #root {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01" on, "cv11" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(var(--md-background));
+    color: hsl(var(--md-on-background));
+}
+
+/* Material Symbols default config */
+.material-symbols-rounded {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: -4px;
+}
+
+@layer base {
+    * {
+        border-color: hsl(var(--md-outline-variant));
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

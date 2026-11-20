@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block");
+
+:root {
+    /* Admin uses a deeper, cooler primary to visually distinguish from user app */
+    --md-primary: 220 60% 32%;            /* deep navy-blue */
+    --md-on-primary: 0 0% 100%;
+    --md-primary-container: 220 80% 92%;
+    --md-on-primary-container: 220 60% 14%;
+
+    --md-secondary: 200 70% 32%;
+    --md-on-secondary: 0 0% 100%;
+    --md-secondary-container: 200 80% 92%;
+    --md-on-secondary-container: 200 70% 14%;
+
+    --md-tertiary: 6 78% 45%;
+    --md-tertiary-container: 6 90% 92%;
+    --md-on-tertiary-container: 6 78% 18%;
+
+    --md-error: 0 78% 42%;
+    --md-on-error: 0 0% 100%;
+
+    --md-background: 220 18% 96%;
+    --md-on-background: 220 14% 13%;
+    --md-surface: 0 0% 100%;
+    --md-surface-variant: 220 16% 94%;
+    --md-on-surface: 220 14% 13%;
+    --md-on-surface-variant: 220 8% 36%;
+
+    --md-outline: 220 8% 70%;
+    --md-outline-variant: 220 14% 88%;
+
+    --radius: 0.5rem;
+
+    --background: var(--md-background);
+    --foreground: var(--md-on-background);
+}
+
+html, body, #root { height: 100%; }
+body {
+    margin: 0;
+    font-family: "Roboto Flex", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: hsl(var(--md-background));
+    color: hsl(var(--md-on-background));
+}
+.material-symbols-rounded {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: -4px;
+}
+@layer base {
+    * { border-color: hsl(var(--md-outline-variant)); }
+}

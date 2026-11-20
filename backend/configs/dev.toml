@@ -1,0 +1,15 @@
+# dev flavour — values consumed by Pulumi to set Lambda env vars.
+[aws]
+region = "ap-southeast-2"
+
+[dynamodb]
+user_profiles_table = "est-dev-user-profiles"
+
+[cognito]
+user_pool_name  = "est-dev-user-pool"
+admin_pool_name = "est-dev-admin-pool"
+
+[lambda]
+log_level = "info"
+memory_mb = 256
+timeout_s = 10

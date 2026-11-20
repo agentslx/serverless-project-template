@@ -1,0 +1,2 @@
+pub mod user_profile_repository_impl;
+pub use user_profile_repository_impl::DynamoUserProfileRepository;
